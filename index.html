@@ -3,118 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Étudiant Cybersécurité</title>
+    <title>SecurePass Generator</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome (icônes) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-   <nav>
-        <div class="logo">Portfolio</div>
+    <div class="container">
+        <h2><i class="fas fa-lock"></i> SecurePass Generator</h2>
 
-        <div class="hamburger">
-            <i class="fas fa-bars"></i>
+        <!-- Résultat -->
+        <div class="result-container">
+            <span id="result">Cliquez sur Générer</span>
+            <button class="btn" id="clipboard" title="Copier">
+                <i class="far fa-copy"></i>
+            </button>
         </div>
-        <ul class="nav-links">
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#skills">Compétences</a></li>
-            <li><a href="#projects">Projets</a></li>
-            <li><a href="#contact" class="btn-contact">Me contacter</a></li>
-        </ul>
-    </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Bonjour, je suis un passionné d'informatique</h1>
-            <h2>Étudiant en <span class="typing-text"></span></h2>
-            <p>J'ai 16 ans et je dévelloppe mon avenir numérique.</p>
-            <div class="buttons">
-                <a href="#contact" class="btn">Me contacter</a>
-                <a href="#projects" class="btn btn-secondary">Voir mes projets</a>
-            </div>
+        <!-- Indicateur de force -->
+        <div id="strength" class="strength">
+            Force : —
         </div>
-    </section>
 
-    <section id="about" class="section">
-        <h2 class="section-title">À propos de moi</h2>
-        <div class="about-container">
-            <div class="card">
-                <i class="fas fa-user-graduate"></i>
-                <h3>Formation</h3>
-                <p>Actuellement en <strong>Bac Pro CIEL</strong> (Cybersécurité, Informatique et réseaux, Électronique).</p>
-                <p>Lycée Louise Michel, Ruffec.</p>
+        <!-- Paramètres -->
+        <div class="settings">
+
+            <div class="setting">
+                <label for="length">Longueur du mot de passe</label>
+                <input type="number" id="length" min="4" max="20" value="12">
             </div>
-            <div class="card">
-                <i class="fas fa-bullseye"></i>
-                <h3>Objectif</h3>
-                <p>Recherche d'un stage pour développer mes compétences en développement et sécurité des réseaux.</p>
+
+            <div class="setting">
+                <label for="uppercase">Inclure des majuscules</label>
+                <input type="checkbox" id="uppercase" checked>
             </div>
+
+            <div class="setting">
+                <label for="lowercase">Inclure des minuscules</label>
+                <input type="checkbox" id="lowercase" checked>
+            </div>
+
+            <div class="setting">
+                <label for="numbers">Inclure des chiffres</label>
+                <input type="checkbox" id="numbers" checked>
+            </div>
+
+            <div class="setting">
+                <label for="symbols">Inclure des symboles (!@#$)</label>
+                <input type="checkbox" id="symbols">
+            </div>
+
         </div>
-    </section>
 
-    <section id="skills" class="section">
-        <h2 class="section-title">Mes Compétences</h2>
-        <div class="skills-grid">
-            <div class="skill-card python">
-                <i class="fab fa-python"></i>
-                <h3>Python</h3>
-                <p>Scripting & Automatisation</p>
-            </div>
-            <div class="skill-card html">
-                <i class="fab fa-html5"></i>
-                <h3>HTML & CSS</h3>
-                <p>Création Web</p>
-            </div>
-            <div class="skill-card js">
-                <i class="fab fa-js"></i>
-                <h3>JavaScript</h3>
-                <p>Interactivité</p>
-            </div>
-            <div class="skill-card dart">
-                <i class="fas fa-mobile-alt"></i> <h3>Dart</h3>
-                <p>Développement Mobile</p>
-            </div>
-        </div>
-    </section>
-
-<section id="projets" class="section">
-    
-    <h2 class="section-title">Mes Projets</h2>
-
-    <div class="project-card">
-        <img src="assets/img/apercu-generateur.png" alt="Aperçu du générateur">
-
-        <div class="project-info">
-            <h3>Générateur de Mots de Passe</h3>
-            <p>Une application web permettant de générer des mots de passe sécurisés avec des critères personnalisables (longueur, caractères spéciaux, etc.).</p>
-            
-            <ul class="technologies">
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript (Vanilla)</li>
-            </ul>
-
-            <div class="project-links">
-                <a href="https://github.com/loghanmrsn/generateur-mot-de-passe/" target="_blank" class="btn btn-secondary">Voir mon generateur-mot-de-passe </a>
-            </div>
-        </div>
+        <!-- Bouton -->
+        <button class="btn btn-large" id="generate">
+            Générer le mot de passe
+        </button>
     </div>
 
-</section>
-    
-<section id="contact" class="section">
-        <h2 class="section-title">Contactez-moi</h2>
-        <p>Intéressé par mon profil pour un stage ? N'hésitez pas !</p>
-        <div class="contact-info">
-           <a href="mailto:moris.loghan@gmail.com" class="btn">M'envoyer un email</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 - by Loghan Morisson.</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script src="app.js"></script>
 </body>
 </html>
