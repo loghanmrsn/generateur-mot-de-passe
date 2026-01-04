@@ -1,0 +1,129 @@
+/* On importe une police style "Tech" (Roboto Mono) depuis Google */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0f172a; /* Bleu très sombre (style VS Code) */
+    color: #e2e8f0; /* Blanc cassé pour ne pas faire mal aux yeux */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    padding: 10px;
+}
+
+/* La carte principale */
+.container {
+    background-color: #1e293b; /* Un peu plus clair que le fond */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); /* Ombre portée */
+    padding: 20px;
+    width: 350px;
+    max-width: 100%;
+    border-radius: 10px;
+    border: 1px solid #334155; /* Bordure fine grise */
+}
+
+h2 {
+    margin: 10px 0 20px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/* La zone noire où s'affiche le mot de passe */
+.result-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 10px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    position: relative;
+    border: 1px solid #38bdf8; /* Bordure bleu néon */
+}
+
+/* Le texte du mot de passe (style machine à écrire) */
+#result {
+    word-wrap: break-word;
+    max-width: calc(100% - 40px);
+    font-family: 'Roboto Mono', monospace; 
+    color: #38bdf8; /* Couleur Cyan */
+}
+
+/* Le petit bouton copier */
+.result-container .btn {
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Les options (longueur, cases à cocher...) */
+.settings {
+    margin-bottom: 20px;
+}
+
+.setting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+
+/* Le grand bouton GÉNÉRER */
+.btn-large {
+    display: block;
+    width: 100%;
+    background-color: #38bdf8; /* Cyan */
+    color: #0f172a; /* Texte sombre */
+    border: none;
+    padding: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.1s ease; /* Animation au clic */
+}
+
+.btn-large:active {
+    transform: scale(0.98); /* Effet d'enfoncement */
+}
+
+/* Style des inputs (chiffres) */
+input[type="number"] {
+    padding: 5px;
+    width: 50px;
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: #fff;
+    border-radius: 4px;
+}
+/* Indicateur de force */
+.strength {
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.strength.weak {
+    color: #f87171; /* rouge */
+}
+
+.strength.medium {
+    color: #facc15; /* jaune */
+}
+
+.strength.strong {
+    color: #4ade80; /* vert */
+}

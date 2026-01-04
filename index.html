@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePass Generator</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome (icônes) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2><i class="fas fa-lock"></i> SecurePass Generator</h2>
+
+        <!-- Résultat -->
+        <div class="result-container">
+            <span id="result">Cliquez sur Générer</span>
+            <button class="btn" id="clipboard" title="Copier">
+                <i class="far fa-copy"></i>
+            </button>
+        </div>
+
+        <!-- Indicateur de force -->
+        <div id="strength" class="strength">
+            Force : —
+        </div>
+
+        <!-- Paramètres -->
+        <div class="settings">
+
+            <div class="setting">
+                <label for="length">Longueur du mot de passe</label>
+                <input type="number" id="length" min="4" max="20" value="12">
+            </div>
+
+            <div class="setting">
+                <label for="uppercase">Inclure des majuscules</label>
+                <input type="checkbox" id="uppercase" checked>
+            </div>
+
+            <div class="setting">
+                <label for="lowercase">Inclure des minuscules</label>
+                <input type="checkbox" id="lowercase" checked>
+            </div>
+
+            <div class="setting">
+                <label for="numbers">Inclure des chiffres</label>
+                <input type="checkbox" id="numbers" checked>
+            </div>
+
+            <div class="setting">
+                <label for="symbols">Inclure des symboles (!@#$)</label>
+                <input type="checkbox" id="symbols">
+            </div>
+
+        </div>
+
+        <!-- Bouton -->
+        <button class="btn btn-large" id="generate">
+            Générer le mot de passe
+        </button>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
